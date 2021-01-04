@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.view.Controller">
+    <MenuBar minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT">
+        <Menu mnemonicParsing="false" text="Fichier">
+            <MenuItem mnemonicParsing="false" onAction="#menuChargerLivre" text="Charger Livre" />
+            <MenuItem mnemonicParsing="false" onAction="#menuSaveLivre" text="Sauvegarder Livre" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Exportation">
+            <MenuItem mnemonicParsing="false" onAction="#menuExportPDF" text="Exportation PDF" />
+            <MenuItem mnemonicParsing="false" text="Exportation HTML" />
+        </Menu>
+    </MenuBar>
+    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT">
+        <cursor>
+            <Cursor fx:constant="DEFAULT" />
+        </cursor>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+        <padding>
+            <Insets left="5.0" right="5.0" />
+        </padding>
+        <Button mnemonicParsing="false" onAction="#createLivre" text="Créer Livre" />
+        <Button mnemonicParsing="false" onAction="#createSection" text="Créer Section" />
+        <Button mnemonicParsing="false" onAction="#createObjet" text="Créer Objet" />
+        <Button mnemonicParsing="false" onAction="#createEnchainement" text="Créer Enchainement" />
+        <Button mnemonicParsing="false" onAction="#generateGraph" text="Générer Graphe" />
+    </HBox>
+    <Separator prefWidth="200.0" />
+    <HBox prefHeight="423.0" prefWidth="776.0">
+        <VBox HBox.hgrow="ALWAYS">
+            <Label text="Explorer" />
+            <Separator />
+            <TreeView fx:id="tree" prefWidth="0.0" />
+        </VBox>
+        <Separator orientation="VERTICAL" />
+        <VBox HBox.hgrow="ALWAYS">
+            <Label fx:id="labTexte" text="Titre" />
+            <Separator />
+            <TextFlow fx:id="textFlow" minHeight="200.0" />
+        </VBox>
+        <Separator orientation="VERTICAL" prefHeight="200.0" />
+        <VBox alignment="TOP_CENTER" cacheShape="false" centerShape="false" nodeOrientation="LEFT_TO_RIGHT" HBox.hgrow="ALWAYS">
+            <Label text="Graphe" />
+            <Separator />
+         <ImageView fx:id="imView" pickOnBounds="true">
+            <viewport>
+               <Rectangle2D />
+            </viewport>
+            <rotationAxis>
+               <Point3D />
+            </rotationAxis>
+         </ImageView>
+        </VBox>
+    </HBox>
+    <ToolBar>
+        <Label fx:id="labStatus" text="Status" />
+      <Button fx:id="toolBut" disable="true" mnemonicParsing="false" onAction="#toolButAction" text="Voir problèmes" visible="false" />
+    </ToolBar>
+</VBox>
