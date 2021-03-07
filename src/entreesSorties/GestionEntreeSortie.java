@@ -28,7 +28,6 @@ public class GestionEntreeSortie implements IEntreeSortie{
 		try(FileInputStream fis = new FileInputStream(fichier);){
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			gl.setLivre((ILivre)ois);
-			gl.setLivre((ILivre)ois);
 			fis.close();
 		}catch(FileNotFoundException f) {
 			throw new ProblemeOuvertureFichier();
